@@ -1,0 +1,283 @@
+#AskCarrierNamePrompt
+[Activity
+    Text = You can further breakdown this information by selecting the carrier name
+    Attachments = ${PrepareCarrierPromptCard()} 
+    AttachmentLayout = list
+]
+
+#AskCarrierNameNoThanksPrompt
+[Activity
+    Attachments = ${PrepareNoThanksPromptCard()} 
+    AttachmentLayout = list
+]
+
+#PrepareCarrierPromptCard()
+- ${json(CarrierPromptCard())}
+
+#CarrierPromptCard()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "dropDownNoThanksCard",
+    "body": [
+        {
+            "type": "Container",
+            "items": [{
+                "type": "Input.ChoiceSet",
+                "id": "dropDownInfo",
+                "style": "compact",
+                "placeholder": "Please Choose",
+                "label": "Select one to view details.",
+                "errorMessage": "Please select a carrier",
+                "isRequired": true,
+                "isMultiSelect": false,
+                "choices": ${conversation.carrierdisplayList}
+            },
+            {
+                "type": "ActionSet",
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "iconUrl": "https://imasva.blob.core.windows.net/imasva-assests/send_icon.png"
+                    }
+                ]
+            }] 
+        }
+    ]
+}
+```
+
+#PrepareNoThanksPromptCard()
+- ${json(NoThanksPromptCard())}
+
+#NoThanksPromptCard()
+-```
+{
+   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "dropDownNoThanksCard",
+    "body": [
+        { 
+            "type": "TextBlock",
+            "text": "_________"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "No, thanks",
+            "data": {
+                "action": "No, thanks is selected!"
+            }
+        }
+    ]
+}
+```
+
+#AskOtherCarrierConfirmPrompt
+[Activity
+    Text = This agent has other ${turn.similarCarrierTitle} contracts. Would you like to see them?
+    Attachments = ${PrepareConfirmButton()}
+]
+
+# PrepareConfirmButton
+- ${json(ConfirmButtons())}
+
+# ConfirmButtons
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "commissionButtons",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "No, thanks",
+            "data": "No, thanks is selected!"
+        },
+		{
+            "type": "Action.Submit",
+            "title": "Yes, show other carriers",
+            "data": "Yes, show other carriers is selected!"
+        }
+    ]
+}
+```
+
+#EndOfFlowText
+[Activity
+    Text = Thank you!
+]
+
+#AskSimilarCarrierNamePrompt
+[Activity
+    Text = Agent is contracted with following ${turn.similarCarrierTitle} carriers. Please select one to view contract details.
+    Attachments = ${PrepareOtherCarrierCard()}
+    AttachmentLayout = list
+]
+
+# PrepareOtherCarrierCard
+- ${json(OtherCarrierPromptCard())}
+
+#OtherCarrierPromptCard()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "type": "AdaptiveCard",
+    "id": "dropDownCard",
+    "body": [
+        {
+            "type": "Input.ChoiceSet",
+            "id": "dropDownInfo",
+            "style": "compact",
+            "placeholder": "Please Choose",
+            "label": "Select one to view details.",
+            "errorMessage": "Please select a carrier",
+            "isRequired": true,
+            "isMultiSelect": false,
+            "choices": ${conversation.carrierdisplayList}
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "iconUrl": "https://imasva.blob.core.windows.net/imasva-assests/send_icon.png"
+        }
+    ]
+}
+```
+
+#AskProductTypeConfirmPrompt
+[Activity
+    Attachments = ${PrepareProductTypeConfirmButton()}
+]
+
+# PrepareProductTypeConfirmButton
+- ${json(ProductTypeConfirmButtons())}
+
+# ProductTypeConfirmButtons
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "commissionButtons",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Get commission details by product types",
+            "data": "Get commission details by product types is selected!"
+        }
+    ]
+}
+```
+
+#AskForProductTypePrompt
+[Activity
+    Text = This carrier offers many products.  Please select a product type to see its commission details.
+    Attachments = ${PrepareProductTypeCard()}
+    AttachmentLayout = list
+]
+
+# PrepareProductTypeCard
+- ${json(ProductTypePromptCard())}
+
+#ProductTypePromptCard()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "type": "AdaptiveCard",
+    "id": "dropDownCard",
+    "body": [
+        {
+            "type": "Input.ChoiceSet",
+            "id": "dropDownInfo",
+            "style": "compact",
+            "placeholder": "Please Choose",
+            "label": "Select one to view details.",
+            "errorMessage": "Please select a product type.",
+            "isRequired": true,
+            "isMultiSelect": false,
+            "choices": ${conversation.productdisplayList}
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "iconUrl": "https://imasva.blob.core.windows.net/imasva-assests/send_icon.png"
+        }
+    ]
+}
+```
+
+# APIErrorText
+[Activity
+    Text = Back-end systems are not responding, please try again later.
+]
+
+# CarrierNotFoundFirstTimeText
+[Activity
+    Text = Sorry, couldn't find the carrier. Try typing carrier name again.
+]
+
+# CarrierRepromptDropdownText
+[Activity
+    Text = ${CarrierRepromptDropdownTextMessage()}
+    Attachments = ${PrepareCarrierPromptCard()}
+    AttachmentLayout = list
+]
+
+# CarrierRepromptDropdownTextMessage
+- IF: ${(turn.carrierNameTitle)}
+    - No carriers are available for ${turn.carrierNameTitle}.\r\nSelect different carrier name
+- ELSE:
+    - This carrier is not available.\r\nSelect different carrier name
+
+# CarrierNotFoundText
+[Activity
+    Text = Sorry, couldn't find the carrier. Click Start Over to restart the conversation.
+]
+
+# ProductTypeForCarrierNotAvilableText
+[Activity
+    Text = Commission details by product is not available for specified agent and carrier.
+]
+
+# ProductNotFoundFirstTimeText
+[Activity
+    Text = Sorry, couldn't find the product type. Try typing again.
+]
+
+#ProductRepromptDropdownText
+[Activity
+    Text = Sorry, couldn't find the product type. Select different product type.
+    Attachments = ${PrepareProductTypeCard()}
+    AttachmentLayout = list
+]
+
+# ProductNotFoundText
+[Activity
+    Text = Sorry, couldn't find the product type. Click Start Over to restart the conversation.
+]
+
+# MoreProductTypeForCarrierText
+[Activity
+    Text = More than 10 products available for specified agent, carrier and product type. These are the first 10 records.
+]
+
+# FlowEndMessage
+[Activity
+    text = Thank you, the flow has ended. Please select any of the available options in the footer for further assistance.
+]
+
+# APIPreText
+- Almost there…
+- One moment please…
+- Please wait…
+- Working on it…

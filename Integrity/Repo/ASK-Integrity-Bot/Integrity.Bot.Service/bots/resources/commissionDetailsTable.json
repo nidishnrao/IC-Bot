@@ -1,0 +1,56 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "commissionTable",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                "type": "Column",
+                "items": [{
+                    "type": "TextBlock",
+                    "weight": "Bolder",
+                    "text": "Product Type"
+                }]
+            },
+            {
+                "type": "Column",
+                "items": [{
+                    "type": "Container",
+                    "items": [{
+                        "type": "TextBlock",
+                        "weight": "Bolder",
+                        "text": "Commission"
+                    }]
+                }]
+            }]
+        },
+        {
+            "type": "Container",
+            "items": [{
+                "type": "ColumnSet",
+                "$data": "${properties}",
+                "columns": [{
+                    "type": "Column",
+                    "items": [{
+                        "type": "TextBlock",
+                        "text": "${productType}",
+                        "wrap": true
+                    }]
+                },
+                {
+                    "type": "Column",
+                    "items": [{
+                        "type": "Container",
+                        "items": [{
+                            "type": "TextBlock",
+                            "text": "${commissionAmount}",
+                            "wrap": true
+                        }]
+                    }]
+                }]
+            }]
+        }
+    ]
+}

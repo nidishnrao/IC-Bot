@@ -1,0 +1,29 @@
+[
+    {
+		"agentId": 123444,
+		"name": "Craig Blair",
+		"firstName": "Craig",
+		"lastName": "Blair",
+		"city": "Los Angeles",
+		"stateCode": "CA",
+		"state": "California"
+	},
+	{
+		"agentId": 234555,
+		"name": "Hai Tran",
+		"firstName": "Hai",
+		"lastName": "Tran",
+		"city": "Savannah",
+		"stateCode": "GA",
+		"state": "Georgia"
+    },
+    {
+        "agentId": 345611,
+        "name": "Bob Smith",
+		"firstName": "Bob",
+		"lastName": "Smith",
+        "city": "Dallas",
+        "stateCode": "TX",
+		"state": "Texas"
+    }
+]

@@ -1,0 +1,60 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "id": "awn",
+  "$data": "${properties}",
+  "body": [
+      {
+          "type": "ColumnSet",
+          "columns": [{
+              "type": "Column",
+              "items": [{
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "AWN"
+              },
+              {
+                  "type": "Container",
+                  "items": [{
+                      "type": "TextBlock",
+                      "weight": "Bolder",
+                      "text": "Writable"
+                  }]
+              }]
+          }]
+      },
+      {
+          "type": "Container",
+          "items": [{
+              "type": "ColumnSet",
+              "$data": "${awnDetails}",
+              "columns": [{
+                  "type": "Column",
+                  "items": [{
+                      "type": "TextBlock",
+                      "text": "${awnNumber}",
+                      "wrap": true
+                  },
+                  {
+                      "type": "Container",
+                      "items": [{
+                          "type": "TextBlock",
+                          "text": "${if(isWritable, 'YES', null)}"
+                      }]
+                  },
+                  {
+                      "type": "Container",
+                      "items": [{
+                          "type": "Container",
+                          "items": [{
+                              "type": "TextBlock",
+                              "text": "${if(!isWritable, 'NO', null)}"
+                          }]
+                      }]
+                  }]
+              }]
+          }]
+      }
+  ]
+}

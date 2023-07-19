@@ -1,0 +1,51 @@
+.web-chat {
+  overflow: hidden;
+}
+
+.connect-spinner {
+  display: flex;
+  margin: auto;
+  text-align: center;
+}
+
+.connect-spinner > .content {
+  margin: auto;
+}
+
+.connect-spinner > .content > .icon {
+  font-size: 64px;
+}
+
+.webchat__initialsAvatar {
+  background-color: white !important;
+}
+
+
+/** Agent name display*/
+.app__privacyPolicyToast {
+  align-items: center;
+  color: #105e7d;
+  display: flex;
+  font-family: 'Calibri', 'Helvetica Neue', 'Arial', 'sans-serif';
+  font-size: 14px;
+  height: 100%;
+}
+
+.app__privacyPolicyToast__icon {
+  text-align: center;
+  width: 36px;
+}
+
+.app__privacyPolicyToast__button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  /* border-radius: 3px; */
+  color: initial;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 4px 0 0 85px;
+  outline: 0;
+  float: center;
+  justify-self: center;
+}

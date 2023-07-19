@@ -1,0 +1,10 @@
+[
+    {
+      "productTypeId": 123,
+      "productTypeName": "Fixed"
+    },
+    {
+        "productTypeId": 789,
+        "productTypeName": "Term"
+    }
+]

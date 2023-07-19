@@ -1,0 +1,24 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+     "type": "AdaptiveCard",
+     "version": "1.0",
+     "id": "dropDownNoThanksCard",
+     "body": [
+         { 
+             "type": "Container",
+             "items": [{
+                 "type": "TextBlock",
+                 "text": "_________"
+             }]
+         }
+     ],
+     "actions": [
+         {
+             "type": "Action.Submit",
+             "title": "No, thanks",
+             "data": {
+                 "action": "No, thanks is selected!"
+             }
+         }
+     ]
+}

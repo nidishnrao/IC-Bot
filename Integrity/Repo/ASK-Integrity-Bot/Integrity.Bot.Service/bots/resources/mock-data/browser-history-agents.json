@@ -1,0 +1,74 @@
+[
+	{
+		"agentId": 123444,
+		"name": "Craig Blair",
+		"firstName": "Craig",
+		"lastName": "Blair",
+		"city": "Los Angeles",
+		"stateCode": "CA",
+		"state": "California"
+	},
+	{
+		"agentId": 234555,
+		"name": "Hai Tran",
+		"firstName": "Hai",
+		"lastName": "Tran",
+		"city": "Savannah",
+		"stateCode": "GA",
+		"state": "Georgia"
+    },
+	{
+		"agentId": 345666,
+        "name": "Craig Buckley",
+		"firstName": "Craig",
+		"lastName": "Buckley",
+        "city": "Dallas",
+        "stateCode": "TX",
+		"state": "Texas"
+    },
+	{
+        "agentId": 345667,
+        "name": "Craig Smith",
+		"firstName": "Craig",
+		"lastName": "Smith",
+        "city": "Dallas",
+        "stateCode": "TX",
+		"state": "Texas"
+    },
+	{
+        "agentId": 345611,
+        "name": "Bob Smith",
+		"firstName": "Bob",
+		"lastName": "Smith",
+        "city": "Dallas",
+        "stateCode": "TX",
+		"state": "Texas"
+    },
+	{
+        "agentId": 345622,
+        "name": "Bob Smith",
+		"firstName": "Bob",
+		"lastName": "Smith",
+        "city": "Dallas",
+        "stateCode": "TX",
+		"state": "Texas"
+    },
+	{
+        "agentId": 345633,
+        "name": "Bob Smith",
+		"firstName": "Bob",
+		"lastName": "Smith",
+        "city": "Austin",
+        "stateCode": "TX",
+		"state": "Texas"
+    },
+	{
+        "agentId": 345694,
+        "name": "Bob Smith",
+		"firstName": "Bob",
+		"lastName": "Smith",
+        "city": "San Jose",
+        "stateCode": "CA",
+		"state": "California"
+    }
+]

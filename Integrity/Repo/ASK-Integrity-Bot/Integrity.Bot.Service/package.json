@@ -1,0 +1,49 @@
+{
+    "name": "integrity-marketing-agency-system-imas",
+    "version": "1.0.0",
+    "description": "A bot that demonstrates core AI capabilities",
+    "author": "Integrity",
+    "main": "index.js",
+    "scripts": {
+        "start": "ndb ./index.js",
+        "watch": "nodemon ./index.js",
+        "lint": "eslint .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "Azure DevOps",
+        "url": "https://dev.azure.com/IntegrityMarketing/Integrity%20Marketing%20Agency%20System%20(IMAS)"
+    },
+    "dependencies": {
+        "@microsoft/recognizers-text-data-types-timex-expression": "1.1.4",
+        "adaptive-expressions": "^4.9.2",
+        "adaptivecards-templating": "^2.1.0",
+        "botbuilder": "^4.9.2",
+        "botbuilder-ai": "^4.15.0",
+        "botbuilder-applicationinsights": "4.9.2",
+        "botbuilder-core": "4.9.2",
+        "botbuilder-dialogs": "4.9.2",
+        "botbuilder-dialogs-adaptive": "4.9.2-preview",
+        "botbuilder-lg": "4.9.2",
+        "botbuilder-testing": "^4.15.0",
+        "dotenv": "^8.2.0",
+        "moment": "^2.29.1",
+        "moment-timezone": "^0.5.32",
+        "ndb": "^1.1.5",
+        "node-fetch": "^2.6.1",
+        "path": "^0.12.7",
+        "restify": "~8.5.1",
+        "url-parse": "^1.5.3"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.32.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-json": "^3.1.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
+        "nodemon": "~2.0.4"
+    }
+}

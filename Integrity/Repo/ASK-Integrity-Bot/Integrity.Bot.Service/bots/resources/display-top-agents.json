@@ -1,0 +1,53 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "$data": "${properties}",
+    "id": "agentInfoCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "${agentFirstName}"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${agentLastName}"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "none",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${agentId}"
+                        },
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${city}${stateCode}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Select Agent",
+            "data": "Agent ${agentId} is selected!"
+        }
+    ]
+}

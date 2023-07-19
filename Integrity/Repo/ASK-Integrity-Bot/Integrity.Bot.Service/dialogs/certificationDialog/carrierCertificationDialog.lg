@@ -1,0 +1,397 @@
+# AskCarrierNamePrompt
+[Activity
+    Text = ${AskCarrierNameText()} 
+    Attachments = ${CarrierDropdownJSON()}
+    AttachmentLayout = list
+]
+
+# AskCarrierNameText
+- IF: ${(turn.restartFlow) || (turn.showCarrierDdMessage)}
+    - ${turn.showCarrierDdMessage}.
+- ELSE:
+    -Select one to view details.
+
+# CarrierDropdownJSON()
+- ${json(CarrierDropdownSchema())}
+
+# CarrierDropdownSchema()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "type": "AdaptiveCard",
+    "id": "dropDownCard",
+    "body": [
+        {
+            "type": "Input.ChoiceSet",
+            "id": "dropDownInfo",
+            "style": "compact",
+            "placeholder": "Please Choose",
+            "label": "Select a carrier to view details.",
+            "errorMessage": "Please select a carrier",
+            "isRequired": true,
+            "isMultiSelect": false,
+            "choices": ${conversation.carrierdisplayList}
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "iconUrl": "https://imasva.blob.core.windows.net/imasva-assests/send_icon.png"
+        }
+    ]
+}
+```
+
+# AskProductTypePrompt
+[Activity
+    Text = Please select a product type to see certifications:
+    Attachments = ${ProductTypeDropdownJSON()}
+    AttachmentLayout = list
+]
+
+# ProductTypeDropdownJSON
+- ${json(ProductTypeDropdownSchema())}
+
+# ProductTypeDropdownSchema()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "type": "AdaptiveCard",
+    "id": "dropDownCard",
+    "body": [
+        {
+            "type": "Input.ChoiceSet",
+            "id": "dropDownInfo",
+            "style": "compact",
+            "placeholder": "Please Choose",
+            "label": "Please select a product type.",
+            "errorMessage": "Please select a product type",
+            "isRequired": true,
+            "isMultiSelect": false,
+            "choices": ${conversation.productdisplayList}
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "iconUrl": "https://imasva.blob.core.windows.net/imasva-assests/send_icon.png"
+        }
+    ]
+}
+```
+
+# APIErrorText
+[Activity
+    Text = Back-end systems are not responding, please try again later.
+]
+
+# CarrierRepromptText
+[Activity
+    Text = Sorry, couldn't find the carrier. Try typing carrier name again.
+]
+
+# AskInvalidCarrierDropdownPrompt
+[Activity
+    Text = ${AskInvalidCarrierDropdownText()}
+    Attachments = ${CarrierDropdownJSON()}
+    AttachmentLayout = list
+]
+
+# AskInvalidCarrierDropdownText
+- IF: ${(turn.showCarrierName) && (turn.showProductType)}
+    - No certifications are available for ${turn.showCarrierName} and ${turn.showProductType}.\r\nSelect different carrier name
+- ELSE IF: ${(turn.showCarrierName)}
+    - No certifications are available for ${turn.showCarrierName}.\r\nSelect different carrier name
+- ELSE IF: ${(turn.showProductType)}
+    - No certifications are available for ${turn.showProductType}.\r\nSelect different carrier name
+- ELSE:
+    - This certification is not available.\r\nSelect different carrier name
+
+# AskInvalidProductTypeDropdownPrompt
+[Activity
+    Text = Sorry, couldn't find the product type. Select different product type.
+    Attachments = ${ProductTypeDropdownJSON()}
+    AttachmentLayout = list
+]
+
+# NoContractDetailsText
+[Activity
+    Text = Sorry, payout details is not available.
+]
+
+# AskForContractPrompt
+[Activity
+    Attachments = ${AskContractCardJSON()} 
+    AttachmentLayout = carousel
+]
+
+# AskContractCardJSON()
+- IF: ${(greater(count(conversation.contractsDetails), 3))}
+    - ${json(ContractDropdownSchema())}
+- ELSE:
+    - ${foreach(conversation.contractsDetails, item, json(ContractCarouselCardSchema(item)))}
+
+# ContractCarouselCardSchema(item)
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "statusInfoCard",
+    "body": [
+        {
+        "type": "Container",
+        "items": [{
+            "type": "Container",
+            "items": [{
+                "type": "ColumnSet",
+                "columns": [{
+                    "type": "Column",
+                    "items": [{
+                                "type": "TextBlock",
+                                "weight": "Bolder",
+                                "text": "${if(item.active=='null', '', '•')}"
+                            },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "Container",
+                                                "items": [{
+                                                    "type": "TextBlock",
+                                                    "weight": "Bolder",
+                                                    "text": "${if(item.pending=='null', '', '•')}"
+                                                }]
+                                            }]
+                                         }]  
+                                     }]
+                                }]
+                             },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "Container",
+                                                "items": [{
+                                                    "type": "Container",
+                                                    "items": [{
+                                                        "type": "TextBlock",
+                                                        "weight": "Bolder",
+                                                        "text": "${if(item.terminated=='null', '', '•')}"
+                                                    }]
+                                                }]
+                                            }]
+                                        }]  
+                                    }]
+                                 }]
+                            },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "TextBlock",
+                                    "weight": "Bolder",
+                                    "text": "${if(item.active=='null', '', 'Active')}"
+                                }]
+                            },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "TextBlock",
+                                            "weight": "Bolder",
+                                            "text": "${if(item.pending=='null', '', 'Pending')}"
+                                        }]
+                                    }]
+                                }]
+                            },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "TextBlock",
+                                                "weight": "Bolder",
+                                                "text": "${if(item.terminated=='null', '', 'Terminated')}"
+                                            }]
+                                        }]
+                                    }]
+                                }]
+                            }]
+                        }]
+                    }]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "none",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${item.statusReason}"
+                        },
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${item.startDate}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Select",
+            "data": "@#contractId:${item.contractId}#@ ${item.status} contract is Selected"
+        }
+    ]
+}
+```
+
+# ContractDropdownSchema()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "type": "AdaptiveCard",
+    "id": "dropDownCard",
+    "body": [
+        {
+            "type": "Input.ChoiceSet",
+            "id": "dropDownInfo",
+            "style": "compact",
+            "placeholder": "Please Choose",
+            "label": "Select one to view details.",
+            "errorMessage": "Please select a contract.",
+            "isRequired": true,
+            "isMultiSelect": false,
+            "choices": ${conversation.contractsDetails}
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "iconUrl": "https://imasva.blob.core.windows.net/imasva-assests/send_icon.png"
+        }
+    ]
+}
+```
+
+# AskNeedRestartPrompt
+[Activity
+    Attachments = ${AskNeedRestartJSON()}
+]
+
+# AskNeedRestartJSON
+- ${json(AskNeedRestartSchema())}
+
+# AskNeedRestartSchema
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "anotherCarrierConfirmButton",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Yes, show more",
+            "data": "Yes, show more is selected!"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "No, thanks",
+            "data": "No, thanks is selected!"
+        }
+    ]
+}
+```
+
+# NoThanksText
+[Activity
+    text = Alright, No worries
+]
+
+# InitiateOtherFlowText
+[Activity
+    text = Most users ask for below information after looking at certifications.\r\nYou can choose to start over at any point in time.
+    Attachments = ${InitiateOtherFlowJSON()}
+]
+
+# InitiateOtherFlowJSON
+- ${json(InitiateOtherFlowButtonsSchema())}
+
+# InitiateOtherFlowButtonsSchema
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "showMoreButtons",
+    "body": [
+        {
+            "type": "Container",
+            "items": [{
+                "type": "ActionSet",
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Contract Info",
+                        "data": "Contract Info is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Hierarchy",
+                        "data": "Hierarchy is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Commission Info",
+                        "data": "Commission Info  is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Appointments",
+                        "data": "Appointments is selected!"
+                    }
+                ]
+            }
+            ]
+        }
+    ]
+}
+``` 
+
+
+> Might be needed
+# MoreProductTypeForCarrierText
+[Activity
+    Text = More than 10 products available for specified agent, carrier and product type. These are the first 10 records.
+]

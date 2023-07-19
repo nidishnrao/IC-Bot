@@ -1,0 +1,20 @@
+[
+    {
+		"status": "Active",
+		"statusReason": "Just In Time",
+		"startDate": "2018-12-28T12:30:20.177Z",
+		"contractId": 12345
+	},
+	{
+		"status": "Pending",
+		"statusReason": "Pending New Business",
+		"startDate": "2019-12-15T12:30:20.177Z",
+		"contractId": 23456
+    },
+    {
+        "status": "Terminated",
+		"statusReason": "Appointment Terminated",
+		"startDate": "2020-12-01T12:30:20.177Z",
+		"contractId": 3457
+    }
+]

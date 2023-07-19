@@ -1,0 +1,21 @@
+{
+    "APP_NAME":"Virtual Assistant",
+    "APP_IMAGE": "https://imasva.blob.core.windows.net/imasva-assests/bot-large.png",
+    "BOT_IMAGE": "https://imasva.blob.core.windows.net/imasva-assests/bot-small.png",
+    "USER_IMAGE": "https://imasva.blob.core.windows.net/imasva-assests/user.png",
+    "BOT_CSS": {
+        "CHAT_BACKGROUND_COLOR":"rgba(255, 255, 255)",
+        "BOT_HEADER_BACKGROUND":"rgba(51, 71, 138)",
+        "FROM_BUBBLE_BACKGROUND_COLOR":"rgba(51,71,138,255)",
+        "FROM_BUBBLE_TEXT_COLOR":"rgba(255, 255, 255)",
+        "BUBBLE_BACKGROUND_COLOR":"rgba(243,243,244,255)",
+        "BUBBLE_TEXT_COLOR":"rgba(128, 128, 128)"
+    },
+    "SERVER_URL": 
+    {
+        "dev": "https://2ec4-20-245-57-47.ngrok-free.app",
+        "demo": "http://localhost:3978",
+        "feature": "http://localhost:3978",
+        "local": "https://2ec4-20-245-57-47.ngrok-free.app"
+    }
+}

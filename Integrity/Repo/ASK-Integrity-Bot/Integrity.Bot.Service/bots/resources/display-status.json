@@ -1,0 +1,139 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "$data": "${properties}",
+    "id": "statusInfoCard",
+    "body": [
+        {
+        "type": "Container",
+        "items": [{
+            "type": "Container",
+            "items": [{
+                "type": "ColumnSet",
+                "columns": [{
+                    "type": "Column",
+                    "items": [{
+                                "type": "TextBlock",
+                                "weight": "Bolder",
+                                "text": "${if(active, '•', null)}"
+                            },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "Container",
+                                                "items": [{
+                                                    "type": "TextBlock",
+                                                    "weight": "Bolder",
+                                                    "text": "${if(pending, '•', null)}"
+                                                }]
+                                            }]
+                                         }]  
+                                     }]
+                                }]
+                             },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "Container",
+                                                "items": [{
+                                                    "type": "Container",
+                                                    "items": [{
+                                                        "type": "TextBlock",
+                                                        "weight": "Bolder",
+                                                        "text": "${if(terminated, '•', null)}"
+                                                    }]
+                                                }]
+                                            }]
+                                        }]  
+                                    }]
+                                 }]
+                            },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "TextBlock",
+                                    "weight": "Bolder",
+                                    "text": "${active}"
+                                }]
+                            },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "TextBlock",
+                                            "weight": "Bolder",
+                                            "text": "${pending}"
+                                        }]
+                                    }]
+                                }]
+                            },
+                            {
+                                "type": "Container",
+                                "items": [{
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "TextBlock",
+                                                "weight": "Bolder",
+                                                "text": "${terminated}"
+                                            }]
+                                        }]
+                                    }]
+                                }]
+                            }]
+                        }]
+                    }]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "none",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${statusReason}"
+                        },
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${startDate}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Select",
+            "data": "${status} contract is Selected"
+        }
+    ]
+}

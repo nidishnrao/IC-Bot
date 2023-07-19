@@ -1,0 +1,145 @@
+# ZipCodePrompt
+[Activity
+  text = Sure. Please enter the ZIP Code
+]
+
+# InvalidZipCodePrompt
+[Activity
+  text = Invalid ZIP Code. Please type again
+]
+
+# AskCarrierNamePrompt
+[Activity
+    Text = ${AskCarrierNameText()} 
+    Attachments = ${CarrierDropdownJSON()}
+    AttachmentLayout = list
+]
+
+# AskCarrierNameText
+- IF: ${(turn.restartFlow) || (turn.showCarrierDdMessage)}
+    - ${turn.showCarrierDdMessage}
+- ELSE:
+    -Select one to view details.
+
+# CarrierDropdownJSON()
+- ${json(CarrierDropdownSchema())}
+
+# CarrierDropdownSchema()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "type": "AdaptiveCard",
+    "id": "dropDownCard",
+    "body": [
+        {
+            "type": "Input.ChoiceSet",
+            "id": "dropDownInfo",
+            "style": "compact",
+            "placeholder": "Please Choose",
+            "label": "Please select a carrier to view agents",
+            "errorMessage": "Please select a carrier",
+            "isRequired": true,
+            "isMultiSelect": false,
+            "choices": ${conversation.carrierdisplayList}
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "iconUrl": "https://imasva.blob.core.windows.net/imasva-assests/send_icon.png"
+        }
+    ]
+}
+```
+
+# AskInvalidCarrierDropdownPrompt
+[Activity
+    Text = ${AskInvalidCarrierDropdownText()}
+    Attachments = ${CarrierDropdownJSON()}
+    AttachmentLayout = list
+]
+
+# AskInvalidCarrierDropdownText
+- IF: ${(turn.showCarrierName)}
+    - Sorry, no ${turn.showCarrierName} agents found in this area.
+- ELSE:
+    - Sorry, no agents found in this area.
+
+# AskNeedRestartPrompt
+[Activity
+    Text = ${RestartPromptText()}
+    Attachments = ${AskNeedRestartJSON()}
+]
+
+# RestartPromptText
+- IF: ${turn.agentsFound}
+    - Do you want to search more agents for other carriers in this ZIP Code?
+- ELSE:
+    - Sorry, No ${turn.carrierName} agents found in this area. Please click yes to change the carrier and try again.
+
+# AskNeedRestartJSON
+- ${json(AskNeedRestartSchema())}
+
+# AskNeedRestartSchema
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "anotherCarrierConfirmButton",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Yes, show more",
+            "data": "Yes, show more is selected!"
+        },
+         {
+            "type": "Action.Submit",
+            "title": "No, thanks",
+            "data": "No, thanks is selected!"
+        }
+    ]
+}
+```
+
+# NoThanksText
+[Activity
+    text = Alright, No worries
+]
+
+# InitiateOtherFlowText
+[Activity
+    text = Most of the users need help with the following information.
+    Attachments = ${InitiateOtherFlowJSON()}
+]
+
+# InitiateOtherFlowJSON
+- ${json(InitiateOtherFlowButtonsSchema())}
+
+# InitiateOtherFlowButtonsSchema
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "showMoreButtons",
+    "body": [
+        {
+            "type": "Container",
+            "items": [{
+                "type": "ActionSet",
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Agent Info",
+                        "data": "Agent Info is selected!"
+                    }
+                   
+                ]
+            }
+            ]
+        }
+    ]
+}
+```

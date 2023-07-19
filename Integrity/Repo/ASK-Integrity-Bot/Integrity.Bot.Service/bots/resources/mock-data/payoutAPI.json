@@ -1,0 +1,61 @@
+{
+	"contractDetails":[
+	   {
+		  "contractId":1234,
+		  "startDate":"2018-12-28T18:53:07",
+		  "endDate":null,
+		  "status":"Active",
+		  "statusReason":"Active",
+		  "awnDetails":[
+			 {
+				"awnNumber":"3559-1",
+				"type":"Agent",
+				"isWritable":true
+			 },
+			 {
+				"awnNumber":"3569-2",
+				"type":"Agent",
+				"isWritable":true
+			 }
+		  ],
+		  "productDetails":[
+			 {
+				"productType":"Traditional Long Term Care",
+				"productName":"LIFESTYLE SOLUTIONS",
+				"level":"Premier +4"
+			 },
+			 {
+				"productType":"Traditional Long Term Care",
+				"productName":"LIFESTYLE SOLUTIONS SELECT",
+				"level":"Premier +4"
+			 }
+		  ]
+	   },
+	   {
+		  "contractId":123,
+		  "startDate":"2020-12-28T18:53:07",
+		  "endDate":null,
+		  "status":"Pending",
+		  "statusReason":"This is Pending",
+		  "awnDetails":[
+			 {
+				"awnNumber":"3559-1",
+				"type":"Agent",
+				"isWritable":true
+			 }
+		  ],
+		  "productDetails":[
+			 {
+				"productType":"Traditional Long Term Care",
+				"productName":"LIFESTYLE SOLUTIONS",
+				"level":"Premier +4"
+			 },
+			 {
+				"productType":"Traditional Long Term Care",
+				"productName":"LIFESTYLE SOLUTIONS SELECT",
+				"level":"Premier +4"
+			 }
+		  ]
+	   }
+	]
+ }

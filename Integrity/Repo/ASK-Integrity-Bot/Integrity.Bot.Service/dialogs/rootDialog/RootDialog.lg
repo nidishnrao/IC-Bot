@@ -1,0 +1,20 @@
+> Structured template definition.
+# Help
+[Activity
+    Text = Hello, I'm your virtual assistant. If you need help, all you have to do is ask. I can help you with all your queries on agents.\r\nFor example, you can ask "I want to know Bob Smith's commissions" or "Get me agent Bob Smith's contracts".\r\nGo on, try it now and see how easy it is to ask.\r\nAlternatively, you can click on buttons that show up for quicker results.\r\nYou can also click on the menu button at the bottom to browse all the options. 
+]
+
+# FlowNotDeveloped
+[Activity
+    Text = Flow yet to be developed! 
+]
+
+# StartOverMessage
+[Activity
+    Text = No problem, I shall start over... but this will close the current conversation.
+]
+
+# UnknownIntent
+[Activity
+    Text = Sorry, I do not understand that.
+]

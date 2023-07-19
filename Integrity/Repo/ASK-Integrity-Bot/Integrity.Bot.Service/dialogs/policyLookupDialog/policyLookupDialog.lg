@@ -1,0 +1,140 @@
+# AskPolicyNumberPrompt
+- IF: ${(conversation.invalidPolicyNumber)}
+    - ${(InvalidPolicyNumberPrompt())}
+- ELSEIF: ${(conversation.invalidPolicyCommission)}
+    - ${(InvalidPolicyCommissionsPrompt())}
+- ELSE:
+    - ${(PolicyNumberPrompt())}
+
+# PolicyNumberPrompt
+[Activity
+    text = Sure. What's the policy number?
+]
+
+# InvalidPolicyCommissionsPrompt
+[Activity
+    text = Sorry, there is no revenue history for the policy you are looking for. Try with another Policy Number.
+]
+
+# InvalidPolicyNumberPrompt
+[Activity
+    text = Sorry, Couldn't find the policy you are looking for. Try with another policy number.
+]
+
+# AskNeedRestartPrompt
+[Activity
+    Attachments = ${AskNeedRestartJSON()}
+]
+
+# AskNeedRestartJSON
+- ${json(AskNeedRestartSchema())}
+
+# AskNeedRestartSchema
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "anotherCarrierConfirmButton",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Yes",
+            "data": "Yes is selected!"
+        },
+         {
+            "type": "Action.Submit",
+            "title": "No, thanks",
+            "data": "No, thanks is selected!"
+        }
+    ]
+}
+```
+
+# AskPolicyIdPrompt
+[Activity
+    Text = I found ${conversation.policyIdLength} policies for ${conversation.policyNumber}.
+    Attachments = ${PolicyIdDropdownJSON()}
+    AttachmentLayout = list
+]
+
+# PolicyIdDropdownJSON
+- ${json(PolicyIdDropdownSchema())}
+
+# PolicyIdDropdownSchema()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "type": "AdaptiveCard",
+    "id": "dropDownCard",
+    "body": [
+        {
+            "type": "Input.ChoiceSet",
+            "id": "dropDownInfo",
+            "style": "compact",
+            "placeholder": "Please Choose",
+            "label": "Select one to view details.",
+            "errorMessage": "Select one to view details",
+            "isRequired": true,
+            "isMultiSelect": false,
+            "choices": ${conversation.policyIdDisplayList}
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "iconUrl": "https://imasva.blob.core.windows.net/imasva-assests/send_icon.png"
+        }
+    ]
+}
+```
+
+# InitiateOtherFlowText
+[Activity
+    Attachments = ${InitiateOtherFlowJSON()}
+]
+
+# InitiateOtherFlowJSON
+- ${json(InitiateOtherFlowButtonsSchema())}
+
+# InitiateOtherFlowButtonsSchema
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "showMoreButtons",
+    "body": [
+        {
+            "type": "Container",
+            "items": [{
+                "type": "ActionSet",
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Contract Info",
+                        "data": "Contract Info is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Hierarchy",
+                        "data": "Hierarchy is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Commission Info",
+                        "data": "Commission Info is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Certifications",
+                        "data": "Certifications is selected!"
+                    }
+                ]
+            }
+            ]
+        }
+    ]
+}
+``` 

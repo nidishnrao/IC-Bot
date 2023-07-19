@@ -1,0 +1,49 @@
+# InitiateOtherFlowText
+[Activity
+    text = Most users ask for below information after looking at agent information.
+    Attachments = ${InitiateOtherFlowJSON()}
+]
+
+# InitiateOtherFlowJSON
+- ${json(InitiateOtherFlowButtonsSchema())}
+
+# InitiateOtherFlowButtonsSchema
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "showMoreButtons",
+    "body": [
+        {
+            "type": "Container",
+            "items": [{
+                "type": "ActionSet",
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Hierarchy",
+                        "data": "Hierarchy is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Commission Info",
+                        "data": "Commission Info  is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Appointments",
+                        "data": "Appointments is selected!"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Certfications",
+                        "data": "Certifications is selected!"
+                    }
+                ]
+            }
+            ]
+        }
+    ]
+}
+``` 

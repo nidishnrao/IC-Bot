@@ -1,0 +1,57 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "payoutTable",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                "type": "Column",
+                "items": [{
+                    "type": "TextBlock",
+                    "weight": "Bolder",
+                    "text": "Product"
+                }]
+            },
+            {
+                "type": "Column",
+                "items": [{
+                    "type": "Container",
+                    "items": [{
+                        "type": "TextBlock",
+                        "weight": "Bolder",
+                        "text": "Payout Level",
+                        "id": "_payoutTablePayoutHeader"
+                    }]
+                }]
+            }]
+        },
+        {
+            "type": "Container",
+            "items": [{
+                "type": "ColumnSet",
+                "$data": "${properties}",
+                "columns": [{
+                    "type": "Column",
+                    "items": [{
+                        "type": "TextBlock",
+                        "text": "${productName}",
+                        "wrap": true
+                    }]
+                },
+                {
+                    "type": "Column",
+                    "items": [{
+                        "type": "Container",
+                        "items": [{
+                            "type": "TextBlock",
+                            "text": "${level}",
+                            "wrap": true
+                        }]
+                    }]
+                }]
+            }]
+        }
+    ]
+}

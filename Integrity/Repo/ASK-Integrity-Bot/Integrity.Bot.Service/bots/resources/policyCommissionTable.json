@@ -1,0 +1,109 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "$data": "${properties}",
+  "id": "policyCommissionDetails",
+  "body": [
+    {
+      "type": "Container",
+      "id": "policyCommissionDesc",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Total commissions paid on this policy"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "totalPolicyCommission",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "$${totalCommission}"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "policyCommissionTable",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Latest Revenue History"
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "weight": "Bolder",
+              "text": "Month/Year"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "Commission Paid",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "policyCommissionData",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "$data": "${commissionDetails}",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${date}",
+                  "wrap": true
+                }
+              ],
+              "width": "168px"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Container",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "$${commission}",
+                      "wrap": true,
+                      "horizontalAlignment": "Right"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

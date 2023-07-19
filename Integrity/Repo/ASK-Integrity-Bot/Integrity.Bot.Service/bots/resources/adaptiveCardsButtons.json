@@ -1,0 +1,14 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "buttons",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "$data": "${properties}",
+            "title": "${value}",
+            "data": "${value} is selected!"
+        }
+    ]
+}

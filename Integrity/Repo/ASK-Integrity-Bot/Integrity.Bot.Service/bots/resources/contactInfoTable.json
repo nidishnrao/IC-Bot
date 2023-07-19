@@ -1,0 +1,189 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "$data": "${properties}",
+  "id": "contactInfo",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "id": "tableLegend",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://bootdiagsgawndaokcckse.blob.core.windows.net/azure-webjobs-hosts/commission.png"
+            }
+          ],
+          "$when": "${isCommission == true}",
+          "width": "20px"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "COMMISSION"
+            }
+          ],
+          "$when": "${isCommission == true}",
+          "width": "auto",
+          "spacing": "None"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://bootdiagsgawndaokcckse.blob.core.windows.net/azure-webjobs-hosts/default.png"
+            }
+          ],
+          "$when": "${isDefault == true}",
+          "width": "20px"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "DEFAULT"
+            }
+          ],
+          "$when": "${isDefault == true}",
+          "width": "auto",
+          "spacing": "None"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://bootdiagsgawndaokcckse.blob.core.windows.net/azure-webjobs-hosts/home.png"
+            }
+          ],
+          "$when": "${isHome == true}",
+          "width": "20px"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "HOME"
+            }
+          ],
+          "$when": "${isHome == true}",
+          "width": "auto",
+          "spacing": "None"
+        }
+      ],
+      "horizontalAlignment": "Center"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "weight": "Bolder",
+              "text": "${header}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "contactInfoData",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "$data": "${contactInfoData}",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Container",
+                  "items": [
+                    {
+                      "type": "ColumnSet",
+                      "columns": [
+                        {
+                          "type": "Column",
+                          "items": [
+                            {
+                              "type": "TextBlock",
+                              "text": "${description}",
+                              "wrap": true
+                            }
+                          ],
+                          "width": "auto"
+                        },
+                        {
+                          "type": "Column",
+                          "items": [
+                            {
+                              "type": "Image",
+                              "url": "https://bootdiagsgawndaokcckse.blob.core.windows.net/azure-webjobs-hosts/commission.png"
+                            }
+                          ],
+                          "width": "20px",
+                          "spacing": "None",
+                          "$when": "${isCommission == true}"
+                        },
+                        {
+                          "type": "Column",
+                          "items": [
+                            {
+                              "type": "Image",
+                              "url": "https://bootdiagsgawndaokcckse.blob.core.windows.net/azure-webjobs-hosts/default.png"
+                            }
+                          ],
+                          "width": "20px",
+                          "spacing": "None",
+                          "$when": "${isDefault == true}"
+                        },
+                        {
+                          "type": "Column",
+                          "items": [
+                            {
+                              "type": "Image",
+                              "url": "https://bootdiagsgawndaokcckse.blob.core.windows.net/azure-webjobs-hosts/home.png"
+                            }
+                          ],
+                          "width": "20px",
+                          "spacing": "None",
+                          "$when": "${isHome == true}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Container",
+                  "items": [
+                    {
+                      "type": "Container",
+                      "items": [
+                        {
+                          "type": "TextBlock",
+                          "text": "${contactValue}",
+                          "wrap": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

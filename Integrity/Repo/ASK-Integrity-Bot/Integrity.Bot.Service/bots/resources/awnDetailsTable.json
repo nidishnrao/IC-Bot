@@ -1,0 +1,233 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "$data": "${properties}",
+    "id": "awnTable",
+    "body": [
+        {
+            "type": "Container",
+            "items": [{
+                "type": "Container",
+                "items": [{
+                    "type": "ColumnSet",
+                    "columns": [{
+                        "type": "Column",
+                        "items": [{
+                            "type": "ColumnSet",
+                            "columns": [{
+                                "type": "Column",
+                                "items": [{
+                                    "type": "TextBlock",
+                                    "weight": "Bolder",
+                                    "text": "${if(active, '•', null)}"
+                                },
+                                {
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "Container",
+                                                "items": [{
+                                                    "type": "Container",
+                                                    "items": [{
+                                                        "type": "TextBlock",
+                                                        "weight": "Bolder",
+                                                        "text": "${if(pending, '•', null)}"
+                                                    }]
+                                                }]
+                                            }]  
+                                        }]
+                                    }]
+                                },
+                                {
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "Container",
+                                                "items": [{
+                                                    "type": "Container",
+                                                    "items": [{
+                                                        "type": "Container",
+                                                        "items": [{
+                                                            "type": "TextBlock",
+                                                            "weight": "Bolder",
+                                                            "text": "${if(terminated, '•', null)}"
+                                                        }]
+                                                    }]
+                                                }]
+                                            }]  
+                                        }]
+                                    }]
+                                },
+                                {
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "TextBlock",
+                                        "weight": "Bolder",
+                                        "text": "${active}"
+                                    }]
+                                },
+                                {
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "TextBlock",
+                                                "weight": "Bolder",
+                                                "text": "${pending}"
+                                            }]
+                                        }]
+                                    }]
+                                },
+                                {
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "Container",
+                                                "items": [{
+                                                    "type": "TextBlock",
+                                                    "weight": "Bolder",
+                                                    "text": "${terminated}"
+                                                }]
+                                            }]
+                                        }]
+                                    }]
+                                },
+                                {
+                                    "type": "Container",
+                                    "items": [{
+                                        "type": "Container",
+                                        "items": [{
+                                            "type": "TextBlock",
+                                            "weight": "Bolder",
+                                            "text": "Effective"
+                                        }]
+                                    }]
+                                }]
+                            }]
+                        },
+                        {
+                            "type": "ColumnSet",
+                            "columns": [{
+                                "type": "Column",
+                                "items": [{
+                                    "type": "ColumnSet",
+                                    "columns": [{
+                                        "type": "Column",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "${statusReason}"
+                                        },
+                                        {
+                                            "type": "Container",
+                                            "items": [{
+                                                "type": "TextBlock",
+                                                "text": "${date}"
+                                            }]
+                                        }]
+                                    }]
+                                }]
+                            }]
+                        }]
+                    }]
+                }]
+            }]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                "type": "Column",
+                "items": [{
+                    "type": "TextBlock",
+                    "weight": "Bolder",
+                    "text": "AWN"
+                }]
+            },
+            {
+                "type": "Column",
+                "items": [{
+                    "type": "Container",
+                    "items": [{
+                        "type": "Container",
+                        "items": [{
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "text": "Writable"
+                        }]
+                    }]
+                }]
+            },
+            {
+                "type": "Column",
+                "items": [{
+                    "type": "Container",
+                    "items": [{
+                        "type": "TextBlock",
+                        "weight": "Bolder",
+                        "text": "Type"
+                    }]
+                }]
+            }]
+        },
+        {
+            "type": "Container",
+            "items": [{
+                "type": "ColumnSet",
+                "$data": "${awnDetails}",
+                "columns": [{
+                    "type": "Column",
+                    "items": [{
+                        "type": "TextBlock",
+                        "text": "${awnNumber}",
+                        "wrap": true
+                    }]
+                },
+                {
+                    "type": "Column",
+                    "items": [{
+                        "type": "Container",
+                        "items": [{
+                            "type": "Container",
+                            "items": [{
+                                "type": "TextBlock",
+                                "text": "${if(isWritable, 'YES', null)}"
+                            }]
+                        },
+                        {
+                            "type": "Container",
+                            "items": [{
+                                "type": "Container",
+                                "items": [{
+                                    "type": "TextBlock",
+                                    "text": "${if(!isWritable, 'NO', null)}"
+                                }]
+                            }]
+                        }]
+                    }]
+                },
+                {
+                    "type": "Column",
+                    "items": [{
+                        "type": "Container",
+                        "items": [{
+                            "type": "TextBlock",
+                            "text": "${type}",
+                            "wrap": true
+                        }]
+                    }]
+                }]
+            }]
+        }
+    ]
+}

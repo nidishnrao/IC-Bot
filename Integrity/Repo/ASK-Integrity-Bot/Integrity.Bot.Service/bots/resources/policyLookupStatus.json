@@ -1,0 +1,207 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "$data": "${properties}",
+  "id": "policyLookup",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "id": "_headerColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "spacing": "None",
+          "id": "_statusHeaderPolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "Status",
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "spacing": "None",
+          "id": "_issueDateHeaderPolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "Issue Date",
+              "horizontalAlignment": "Right",
+              "weight": "Bolder"
+            }
+          ]
+        }
+      ],
+      "spacing": "None"
+    },
+    {
+      "type": "ColumnSet",
+      "id": "_valueColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "spacing": "None",
+          "id": "_statusValuePolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "${status}"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "spacing": "None",
+          "id": "_issueDateValuePolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "${issuedDate}",
+              "horizontalAlignment": "Right"
+            }
+          ]
+        }
+      ],
+      "spacing": "None"
+    },
+    {
+      "type": "ColumnSet",
+      "id": "_insuredColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "100px",
+          "spacing": "None",
+          "id": "_insuredHeaderPolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "Insured",
+              "spacing": "None",
+              "horizontalAlignment": "Left",
+              "weight": "Bolder",
+              "size": "Default",
+              "fontType": "Default"
+            }
+          ],
+          "minHeight": "35px",
+          "verticalContentAlignment": "Center",
+          "horizontalAlignment": "Left"
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "spacing": "None",
+          "id": "_insuredValuePolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "${insured}",
+              "size": "Default"
+            }
+          ],
+          "minHeight": "35px",
+          "verticalContentAlignment": "Center"
+        }
+      ],
+      "spacing": "None"
+    },
+    {
+      "type": "ColumnSet",
+      "id": "_carrierColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "100px",
+          "spacing": "None",
+          "id": "_carrierHeaderPolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "Carrier",
+              "spacing": "None",
+              "horizontalAlignment": "Left",
+              "weight": "Bolder",
+              "size": "Default",
+              "fontType": "Default"
+            }
+          ],
+          "minHeight": "35px",
+          "verticalContentAlignment": "Center",
+          "horizontalAlignment": "Left"
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "spacing": "None",
+          "id": "_carrierValuePolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "${carrier}",
+              "size": "Default"
+            }
+          ],
+          "minHeight": "35px",
+          "verticalContentAlignment": "Center"
+        }
+      ],
+      "spacing": "None"
+    },
+    {
+      "type": "ColumnSet",
+      "id": "_productColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "100px",
+          "spacing": "None",
+          "id": "_productHeaderPolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "wrap": true,
+              "text": "Product",
+              "weight": "Bolder",
+              "size": "Default"
+            }
+          ],
+          "minHeight": "35px",
+          "verticalContentAlignment": "Center"
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "spacing": "None",
+          "id": "_productValuePolicyStatus",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${product}",
+              "wrap": true,
+              "size": "Default"
+            }
+          ],
+          "minHeight": "35px",
+          "verticalContentAlignment": "Center"
+        }
+      ],
+      "spacing": "None"
+    }
+  ]
+}

@@ -1,0 +1,1185 @@
+.minimizable-web-chat > button.maximize {
+  border-radius: 50%;
+  bottom: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  color: White;
+  font-size: 30px;
+  height: 50px;
+  outline: 0;
+  padding: 15px;
+  position: fixed;
+  right: 10px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.minimizable-web-chat > button.minimize{
+  border-radius: 50%;
+  bottom: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  color: White;
+  font-size: 30px;
+  height: 40px;
+  outline: 0;
+  position: fixed;
+  right: 10px;
+  width: 40px;
+  z-index: 1000;
+}
+
+.minimizable-web-chat > button.maximize > .red-dot {
+  color: #EF0000;
+  font-size: 12px;
+  position: absolute;
+  right: 6px;
+  top: 2px;
+}
+
+.minimizable-web-chat > button.maximize:focus:not(:active),
+.minimizable-web-chat > button.maximize:hover:not(:active) {
+  background-color: #069;
+  border-color: #069;
+}
+
+.minimizable-web-chat > button.maximize:active {
+  background-color: White;
+  color: #39C;
+}
+
+.minimizable-web-chat > .chat-box {
+  background-color: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  border: 4px solid #39C;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  min-width: 400px;
+  position: fixed;
+  top: 20px;
+  width: 30%;
+}
+
+.minimizable-web-chat > .chat-box.hide {
+  display: none;
+}
+
+.minimizable-web-chat > .chat-box.left {
+  left: 20px;
+}
+
+.minimizable-web-chat > .chat-box.right {
+  right: 30px;
+  z-index: 999;
+  background-color: white;
+}
+
+.minimizable-web-chat > .chat-box > header {
+  background-color: #39C;
+  height: 40px;
+  display: flex;
+}
+
+.minimizable-web-chat > .chat-box > header > .filler {
+  flex: 0 10000 100%;
+}
+
+.minimizable-web-chat > .chat-box > header > button {
+  width: 40px;
+  height: 40px;
+  background-color: Transparent;
+  border: 0;
+  color: White;
+  outline: 0;
+}
+
+.minimizable-web-chat > .chat-box > header > button:focus:not(:active),
+.minimizable-web-chat > .chat-box > header > button:hover:not(:active) {
+  color: rgba(255, 255, 255, .6);
+}
+
+.minimizable-web-chat > .chat-box > header > button:focus:active {
+  color: rgba(255, 255, 255, .4);
+}
+
+.minimizable-web-chat > .chat-box > .react-web-chat {
+  flex: 1;
+}
+
+/* FIX: DI Updates */
+.webchat__bubble .webchat__bubble__content {
+  flex-grow: 0 !important;
+}
+
+.webchat__stacked-layout .webchat__stacked-layout__attachment> .webchat__bubble__content {
+  background: white !important;
+}
+
+.webchat__stacked-layout .webchat__stacked-layout__attachment {
+  min-width: 110px !important;
+  max-width: fit-content !important;
+}
+
+.webchat__bubble:not(.webchat__bubble--from-user) .webchat__bubble__content {
+  min-height: 0px !important;
+  color: black !important;
+}
+
+.ac-container.ac-adaptiveCard {
+  padding: 0px !important;
+  margin: 0px !important;
+  background-color: white !important;
+  border: 0px !important;
+}
+
+.webchat__bubble__content {
+  border-style: none !important;
+}
+
+#tipCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> div> .ac-image {
+  width : 14px !important;
+  padding-top : 2px !important;
+}
+
+#tipCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock> p {
+  font-size: 13px !important;
+  margin-top: -1px !important;
+  margin-left: 5px !important;
+  color: grey !important;
+  width: 98% !important;
+  white-space: pre-wrap !important;  
+}
+
+#tipCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container {
+  flex: none !important
+}
+
+#buttons.ac-container.ac-adaptiveCard> div> div> .ac-actionSet,
+#commissionButtons.ac-container.ac-adaptiveCard> div> div> .ac-actionSet {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: start !important;
+  flex-wrap: wrap !important;
+}
+
+#buttons.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> .ac-pushButton,
+#commissionButtons.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> .ac-pushButton {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+  margin-right: 6px !important;
+  background-color: #c49e45 !important;
+  border-style: hidden !important;
+  color: white !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  padding: 8px !important;
+  font-size: 11px !important;
+  cursor: pointer;
+}
+
+.react-film__flipper .react-film__flipper__body {
+  font-size: 15px !important;
+  font-weight: bold !important;
+  height: 18px !important;
+  line-height: 18px !important;
+  width: 18px !important;
+  background-color: rgba(51, 71, 138) !important;
+}
+
+.react-film__filmstrip{
+  width: 283px !important;
+}
+
+.ac-horizontal-separator {
+  height: 0px !important;
+}
+
+.ac-vertical-separator {
+  width: 0px !important;
+}
+
+.react-film__flipper .react-film__flipper__slider {
+  position: static !important;
+}
+
+.chatBottom {
+  margin: 10px 0 10px 20px;
+}
+
+.bottomIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#resetIcon{
+  width : 14px;
+  height :14px;
+}
+
+#helpIcon{
+  width : 18px;
+  height : 18px;
+}
+
+.bottomIconData {
+  cursor: pointer;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  margin: 0 4px 0 0;
+}
+
+.bottomdivider {
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background: #707070;
+  margin: 0 8px 0 6px;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard, #statusInfoCard.ac-container.ac-adaptiveCard {
+  width: 88px !important;
+  background-color: #F6F1E3 !important;
+}
+
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-textBlock> p {
+  color: #109618 !important;
+  margin-left: 6px !important;
+  margin-top: -4px !important;
+  margin-bottom: 4px !important;
+  font-size: 21px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container> div.ac-textBlock> p {
+  color: #109618 !important;
+  font-size: 12px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container {
+  flex-direction: row !important;
+  margin-top: 7px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container>  div.ac-container>  div.ac-container>  div.ac-container> div.ac-textBlock> p{
+  color: #FF0000 !important;
+  font-size: 12px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container>  div.ac-container>  div.ac-container> div.ac-container>  div.ac-container>  div.ac-container> div.ac-textBlock> p{
+  color: #FF0000 !important;
+  margin-left: 6px !important;
+  margin-top: -4px !important;
+  margin-bottom: 4px !important;
+  font-size: 21px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container>  div.ac-container>  div.ac-container> div.ac-container> div.ac-container> div.ac-textBlock> p {
+  color: #FF7B00 !important;
+  margin-left: 6px !important;
+  margin-top: -4px !important;
+  margin-bottom: 4px !important;
+  font-size: 21px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container> div.ac-container> div.ac-container> div.ac-textBlock> p {
+  color: #FF7B00 !important;
+  font-size: 12px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container> div.ac-container> div.ac-container> div.ac-textBlock, #statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container> div.ac-textBlock, #statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container>  div.ac-container>  div.ac-container>  div.ac-container> div.ac-textBlock {
+  margin-top: -3px !important;
+  margin-left: 1px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet {
+  margin-bottom: 10px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default {
+  background-color: #c49e45 !important;
+  color: white !important;
+  margin-right: 7px !important;
+  margin-left: 7px !important;
+  font-size: 10px !important;
+  border: none !important;
+  padding: 4px !important;
+  border-radius: 6px !important;
+  cursor: pointer;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> .ac-container> div.ac-columnSet> div.ac-container> .ac-textBlock> p {
+  color: grey !important;
+  font-size: 10px !important;
+  margin-left: 8px !important;
+  width: 90% !important;
+  line-height: 10px !important;
+  overflow: hidden !important;
+  height: 20px !important;
+  text-overflow: ellipsis !important;
+  margin-bottom: 8px !important;
+  white-space: pre-wrap !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container> div.ac-textBlock> p {
+  font-size: 12px !important;
+  margin-left: 7px !important;
+  margin-bottom: 5px !important;
+}
+#statusInfoCard.ac-container.ac-adaptiveCard> div.ac-container> div.ac-columnSet> div.ac-container> div.ac-container> div.ac-textBlock {
+  margin-top: -2px !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-textBlock {
+  min-height: 20px !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-textBlock> p {
+  margin-top: 5px !important;
+  margin-left: 9px !important;
+  margin-bottom: -2px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  width: fit-content !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-container> .ac-textBlock {
+  min-height: 17px !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-container> .ac-textBlock> p {
+  margin-top: -2px !important;
+  margin-left: 9px !important;
+  margin-right: 7px !important;
+  font-size: 13px !important;
+  width: fit-content !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock {
+  min-height: 17px !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock> p {
+  margin-top: -4px !important;
+  margin-left: 9px !important;
+  font-size: 10px !important;
+  color: grey !important;
+  width: fit-content !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock {
+  min-height: 17px !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> hr {
+  display: none !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p {
+  margin-top: -3px !important;
+  margin-left: 9px !important;
+  font-size: 11px !important;
+  margin-bottom: 3px !important;
+  margin-right: 33px !important;
+  width: fit-content !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default {
+  background-color: #c49e45 !important;
+  color: white !important;
+  margin-right: 7px !important;
+  margin-left: 7px !important;
+  font-size: 10px !important;
+  border: none !important;
+  padding: 4px !important;
+  border-radius: 6px !important;
+  cursor: pointer;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet {
+  margin-bottom: 5px !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> .ac-pushButton {
+  font-weight: 500 !important;
+}
+
+#carrierCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: start !important;
+  flex-wrap: wrap !important;
+}
+
+#carrierCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> .ac-pushButton {
+  margin: 3px 3px !important;
+  background-color: #c49e45 !important;
+  border-style: hidden !important;
+  color: white !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  padding: 8px !important;
+  font-size: 11px !important;
+  cursor: pointer;
+}
+
+#carrierCard.ac-container.ac-adaptiveCard> div> div> div.ac-container.ac-adaptiveCard {
+  background-color: white !important;
+  border: none !important;
+}
+
+#carrierCard.ac-container.ac-adaptiveCard> div> div> div.ac-container.ac-adaptiveCard> div> div> div.ac-actionSet> .ac-pushButton {
+  margin-left: 19px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  background-color: #c49e45 !important;
+  border-style: hidden !important;
+  color: white !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  padding: 8px !important;
+  font-size: 11px !important;
+  cursor: pointer;
+}
+
+#carrierCard.ac-container.ac-adaptiveCard> div> div> div.ac-container.ac-adaptiveCard> div> div> div.ac-actionSet {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: start !important;
+  flex-wrap: wrap !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard {
+  width: 136px !important;
+  background-color: #F6F1E3 !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-textBlock {
+  width: fit-content !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-textBlock> p {
+  margin-top: 6px !important;
+  margin-left: 9px !important;
+  font-size: 13px !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet {
+  margin-top: 5px !important;
+  min-height: 18px !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-container {
+  max-width: 95px !important;
+  flex: none !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-textBlock {
+  width: fit-content !important;
+  max-width: 95px !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-textBlock> p {
+  width: 91% !important;
+  margin-top: 2px !important;
+  margin-left: 9px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container {
+  margin-left: -44px !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container {
+  width: fit-content !important;
+}
+
+/* #commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock {
+  margin-left: 7px !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  width: fit-content !important;
+} */
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> div> img.ac-image {
+  height: 14px !important;
+  width: 14px !important;
+  margin-left: 7px !important;
+  margin-top: 1px !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p {
+  font-size: 11px !important;
+}
+
+#commissionCard.ac-container.ac-adaptiveCard> .ac-container> .ac-textBlock {
+  color: grey !important;
+  font-size: 11px !important;
+  margin-left: 9px !important;
+  margin-top: -4px !important;
+  margin-bottom: 4px !important;
+}
+
+#commissionDetails.ac-container.ac-adaptiveCard {
+  background-color: #F6F1E3 !important;
+  width: 88px !important;
+}
+
+#commissionDetails.ac-container.ac-adaptiveCard> .ac-textBlock> p {
+  margin-top: 8px !important;
+  margin-left: 10px !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+  width: 85% !important;
+}
+
+#commissionDetails.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-textBlock> p, #productLevel.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-textBlock> p {
+  margin-top: -4px !important;
+  margin-left: 10px !important;
+  font-size: 12px !important;
+  width: 85% !important;
+}
+
+#commissionDetails.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-textBlock, #productLevel.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-textBlock {
+  min-height: 17px !important;
+}
+
+#commissionDetails.ac-container.ac-adaptiveCard> .ac-container> .ac-textBlock> p {
+  margin-top: 6px !important;
+  margin-left: 9px !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  width: 85% !important;
+}
+
+#commissionDetails.ac-container.ac-adaptiveCard> .ac-container> .ac-textBlock {
+  margin-bottom: 7px !important;
+  margin-right: 45px !important;
+  width: 100%;
+}
+
+#productLevel.ac-container.ac-adaptiveCard {
+  background-color: #F6F1E3 !important;
+  width: 88px !important;
+}
+
+#productLevel.ac-container.ac-adaptiveCard> .ac-textBlock> p {
+  margin-top: 8px !important;
+  margin-left: 10px !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+  margin-bottom: 2px !important;
+  margin-right: 10px !important;
+  width: 85% !important;
+}
+
+#productLevel.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-textBlock  {
+  margin-bottom: 7px !important;
+}
+
+.ac-multichoiceInput {
+  padding: 6px !important;
+}
+
+#dropDownCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default> img, #dropDownNoThanksCard.ac-container.ac-adaptiveCard> div.ac-container> div> div> .ac-actionSet> button.ac-pushButton.style-default> img {
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 15px !important;
+  margin-left: 1px !important;
+  margin-bottom: -3px !important;
+  margin-top: 18px !important;
+  cursor: pointer !important;
+}
+
+#dropDownCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default, #dropDownNoThanksCard.ac-container.ac-adaptiveCard> div.ac-container> div> div> .ac-actionSet> button.ac-pushButton.style-default {
+    color: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+#dropDownCard.ac-container.ac-adaptiveCard> div#dropDownInfo> div.ac-input-container, #dropDownNoThanksCard.ac-container.ac-adaptiveCard> div.ac-container> div#dropDownInfo> div.ac-input-container {
+  width: 210px !important;
+}
+
+.ac-input.ac-multichoiceInput.ac-choiceSetInput-compact {
+  border-radius: 7px !important;
+}
+
+.webchat__adaptive-card-renderer .ac-pushButton {
+  padding: 0px !important;
+}
+
+#dropDownNoThanksCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default {
+  background-color: #c49e45 !important;
+  border-style: hidden !important;
+  color: white !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  padding: 8px !important;
+  font-size: 11px !important;
+  cursor: pointer;
+}
+
+#dropDownNoThanksCard.ac-container.ac-adaptiveCard> div.ac-textBlock {
+  min-width: 245px !important;
+  margin-top: -6px !important;
+}
+
+#dropDownNoThanksCard.ac-container.ac-adaptiveCard> div.ac-textBlock> hr {
+  margin-top: 7px !important;
+  width: 75% !important;
+}
+
+#dropDownCard.ac-container.ac-adaptiveCard, #dropDownNoThanksCard.ac-container.ac-adaptiveCard> div.ac-container {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+#dropDownNoThanksCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet {
+  align-items: center !important;
+  /* width: 85% !important; */
+}
+
+#dropDownNoThanksCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default> div {
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+}
+
+#dropDownNoThanksCard.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default {
+  margin-top: 3px !important;
+}
+
+#dropDownCard.ac-container.ac-adaptiveCard> div#dropDownInfo> label > span:nth-child(2), #dropDownNoThanksCard.ac-container.ac-adaptiveCard> div.ac-container> div#dropDownInfo> label > span:nth-child(2) {
+  display: none !important;
+}
+
+.iconDiff {
+  font-size: 14px;
+  font-weight: 200;
+  padding-left: 2px;
+  padding-right: 7px;
+}
+
+.webchat__send-box__main {
+  width: 100%;
+}
+
+.webchat__send-box-text-box {
+  padding: 10px 12px 0px 20px !important;
+  max-width: 342px !important;
+}
+
+.webchat__send-box .webchat__send-box__button {
+  background: #33478A !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  margin: 11px 17px 0 0 !important;
+  cursor: pointer;
+  position: relative;
+}
+
+.webchat__send-box-text-box__input {
+  min-height: 30px !important;
+  background-color: #EDF0F5 !important;
+  border-radius: 2px;
+  padding-left: 5px !important;
+  font-size: 14px !important;
+}
+
+.webchat__send-box .webchat__send-box__button::after {
+  content: '';
+  background-image: url(../images/send-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-size: contain;
+  height: 14px;
+  width: 16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(50%, 50%)
+}
+
+.webchat__send-box .webchat__send-box__button svg {
+  display: none;
+}
+
+.webchat__basic-transcript__focus-indicator{border: none !important;}
+
+#bot {
+  height: 62px;
+  width: 62px;
+  margin: -20px 0px 0px -20px;
+}
+
+#close {
+  height: 50px;
+  width: 50px;
+  margin: -6px 0px 0px -10px;
+  cursor: pointer;
+}
+
+.webchat__stacked-layout__avatar-gutter {
+  width: 30px !important;
+}
+
+.webchat__imageAvatar {
+  width : 30px !important;
+}
+
+.webchat__defaultAvatar--fromUser > .webchat__imageAvatar > .webchat__imageAvatar__image > img {
+  width: 25px !important;
+  height: 18px !important;
+}
+
+.webchat__stacked-layout__attachment-row {
+  margin-left: 0px !important;
+}
+
+.react-film__flipper {
+  width: 70px !important;
+}
+
+.webchat__stacked-layout__status > span {
+  padding-top: 0px !important;
+  padding-left: 2px !important;
+}
+
+.webchat__carousel-filmstrip__status > span {
+  padding-top: 0px !important;
+  margin-left: -9px !important;
+}
+
+.webchat__carousel-filmstrip--no-message > .webchat__carousel-filmstrip__status > .webchat__carousel-filmstrip__avatar-gutter {
+  margin-left: 0px !important;
+  width: 0px !important;
+}
+
+.webchat__carousel-filmstrip .webchat__carousel-filmstrip__status {
+  margin-left: 5px !important;
+}
+
+.webchat__send-icon {
+  margin-left: -25px;
+}
+
+.webchat__basic-transcript__activity-indicator--focus {
+  display: none !important;
+}
+
+.webchat__stacked-layout__message.webchat__bubble .webchat__bubble__content {
+  max-width: 245px !important;
+}
+
+.webchat__stacked-layout__message.webchat__bubble:not(.webchat__bubble--from-user) .webchat__bubble__content {
+  background-color: #EDF0F5 !important;
+}
+
+.webchat__carousel-filmstrip .webchat__carousel-filmstrip__main {
+  /* max-width: 250px !important; */
+  max-width: 100px !important;
+}
+
+.webchat__stacked-layout__message.webchat__bubble:not(.webchat__bubble--from-user) .webchat__bubble__content, 
+.webchat__stacked-layout__message.webchat__bubble.webchat__bubble--from-user .webchat__bubble__content  {
+  border-radius: 0 5px 5px 5px !important;
+  margin-left: 0 !important;
+  position:relative;
+  overflow: initial !important;
+}
+
+.webchat__stacked-layout__message.webchat__bubble:not(.webchat__bubble--from-user) .webchat__bubble__content::after {
+  position:absolute;
+  content:'';
+  width: 0;
+  height: 0;
+  border-top: 8px solid #EDF0F5;
+  border-left: 10px solid transparent;
+  top:0;
+  left:-8px;
+}
+
+.webchat__stacked-layout__message.webchat__bubble.webchat__bubble--from-user .webchat__bubble__content::after {
+  position:absolute;
+  content:'';
+  width: 0;
+  height: 0;
+  border-top: 8px solid #33478a;
+  border-right: 10px solid transparent;
+  top:0;
+  right:-8px;
+}
+
+.webchat__stacked-layout__message.webchat__bubble.webchat__bubble--from-user .webchat__bubble__content {
+  border-radius: 5px 0 5px 5px !important;
+  margin-right: 0 !important;
+}
+
+.webchat__send-box .webchat__send-box__main {
+  border-top: none !important;
+}
+
+/* .webchat__carousel-layout {
+  max-width: 300px !important;
+} */
+
+.webchat__basic-transcript {
+  border-bottom: 1px solid #E7E8EA;
+}
+
+button:focus, button:focus-visible {
+  outline: none !important;
+}
+
+.webchat__typingIndicator {
+  margin-left: 40px !important;
+}
+
+.webchat__carousel-filmstrip--no-message {
+  margin-left: 45px !important;
+  margin-right: 45px !important;
+}
+
+.webchat__carousel-layout .react-film__flipper--left {
+  left: 5px !important;
+}
+
+.webchat__carousel-layout .react-film__flipper--right {
+  right: 0px !important;
+}
+
+.webchat__carousel-layout .webchat__carousel-filmstrip-attachment,
+.webchat__carousel-layout .webchat__carousel-filmstrip__attachment {
+  min-width: 93px !important;
+  padding-left: 5px !important;
+}
+
+.webchat__carousel-layout .react-film__main__slider--hide {
+  display: none !important;
+}
+
+.initIcon {
+  width: 100px;
+  height: auto;
+}
+
+.initP {
+  margin-top: 0px !important;
+}
+
+button:disabled,
+button[disabled],
+button[aria-label="Reminders"], 
+button[aria-label="Service Tickets"],
+button[aria-label="Application Status"], 
+button[aria-label="Discharge Summary"],
+button[aria-label="Rx"], 
+button[aria-label="Appointments"], 
+button[aria-label="Certifications"],
+button[aria-label="Insurance Status"] {
+  opacity: 0.5;
+  cursor: auto !important;
+  pointer-events: none;
+}
+
+.webchat__carousel-filmstrip .webchat__carousel-filmstrip__alignment-pad {
+  width: 0px !important;
+}
+
+.webchat__carousel-layout .react-film__flipper--left, 
+.webchat__carousel-layout .react-film__flipper--right {
+  height: calc(100% - 18px) !important;
+}
+
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-textBlock> p,
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-container> .ac-textBlock> p,
+#agentInfoCard.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p{
+  width: 85% !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard, #awnTable.ac-container.ac-adaptiveCard, #commissionTable.ac-container.ac-adaptiveCard, #awn.ac-container.ac-adaptiveCard {
+  width: 292px !important;
+  background-color: #F6F1E3 !important;
+  border-radius: 5px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-columnSet, #commissionTable.ac-container.ac-adaptiveCard> .ac-columnSet, #awn.ac-container.ac-adaptiveCard> .ac-columnSet {
+  background-color: #c49e45 !important;
+  padding: 3px !important;
+  margin-left: 7px !important;
+  margin-right: 7px !important;
+  margin-top: 10px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-columnSet {
+  background-color: #c49e45 !important;
+  padding: 3px !important;
+  margin-left: 7px !important;
+  margin-right: 7px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock {
+  margin-left: 7px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock, #payoutTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock, #awnTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock, #awnTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock, #commissionTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock, #commissionTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock, #awn.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock {
+  color: white !important;
+  font-size: 12px !important;
+}
+
+#awn.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock> p {
+  margin-left: 5px !important;
+}
+
+#awn.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock {
+  margin-left: 7px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-textBlock {
+  margin-left: 5px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet, #commissionTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet, #awn.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet {
+  border-color: #c49e45 !important;
+  border-top: white !important;
+  background: white !important;
+  border-style: solid !important;
+  margin-left: 7px !important;
+  margin-right: 7px !important;
+  border-width: 1px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock {
+  text-align: center !important;
+  margin-left: 23px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock > p{
+  margin-left: 23px !important;
+}
+
+#commissionTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock {
+  text-align: right !important;
+  margin-right: 13px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-container, #awnTable.ac-container.ac-adaptiveCard> .ac-container, #commissionTable.ac-container.ac-adaptiveCard> .ac-container, #awn.ac-container.ac-adaptiveCard> .ac-container {
+  margin-bottom: 7px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container {
+  flex: none !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock, #commissionTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock {
+  margin-left: 3px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock> p {
+  width: 160px !important;
+}
+
+#awn.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock {
+  font-size: 12px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock, #payoutTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock, #commissionTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock, #commissionTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock  {
+  font-size: 12px !important;
+  margin-left: 7px !important;
+}
+
+#commissionTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock {
+  width: 142px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock {
+  margin-left: 19px !important;
+}
+
+#commissionTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock {
+  margin-right: 15px !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  /* max-width: 10px !important; */
+  margin-left: 15px !important;
+}
+
+#commissionTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p {
+  width: 80px !important;
+}
+
+#payoutTable.ac-container.ac-adaptiveCard > .ac-columnSet > .ac-container > .ac-container > .ac-textBlock > p {
+  width : 71% !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock {
+  margin-left: 26px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock {
+  width: 85px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock {
+  margin-left: 27px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p {
+  width: 50px !important;
+  margin-left: 23px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-textBlock {
+  margin-left: 7px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container{
+  flex-direction: row !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock {
+  text-align: left !important;
+  margin-left: 8px !important;
+  width: 161px !important;
+  margin-bottom: 2px !important;
+  font-size: 13px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p {
+  font-size: 11px !important;
+  width: 111px !important;
+  text-align: right !important;
+}
+
+/*for dot*/
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock> p, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-textBlock> p, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container>  .ac-textBlock> p{
+  margin-top: 10px !important;
+  font-size: 25px !important;
+  margin-left: 6px !important;
+  margin-right: 2px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-textBlock> p {
+  color: #109618 !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container>  .ac-textBlock> p {
+  color: #FF7B00 !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container>  .ac-textBlock> p {
+  color: #FF0000 !important;
+}
+
+/*for Active*/
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-container> .ac-textBlock> p, #awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-textBlock> p {
+  margin-top: 10px !important;
+  min-width: 213px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-textBlock> p {
+  color: #109618 !important;
+  font-size: 12px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-container> .ac-textBlock> p {
+  color: #FF7B00 !important;
+  font-size: 12px !important;
+}
+
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-container> .ac-container> .ac-textBlock> p {
+  color: #FF0000 !important;
+  font-size: 12px !important;
+}
+
+/*for effective*/
+#awnTable.ac-container.ac-adaptiveCard> .ac-container> .ac-container> .ac-columnSet> .ac-container> .ac-columnSet> .ac-container> .ac-container> .ac-container> .ac-textBlock> p {          
+  margin-top: 10px !important;
+  font-size: 12px !important;
+  margin-left: 5px !important;
+}
+
+/*for cursor pointer for dropdown*/
+#dropDownCard.ac-container.ac-adaptiveCard> div#dropDownInfo> div.ac-input-container > select, #dropDownNoThanksCard.ac-container.ac-adaptiveCard> div.ac-container> div#dropDownInfo> div.ac-input-container> select {
+  cursor: pointer !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Yes No Buttons in Contract flow restart*/
+#anotherCarrierConfirmButton.ac-container.ac-adaptiveCard> div> div> .ac-actionSet {
+  flex-direction: row !important;
+  margin-left: -7px !important;
+}
+
+#anotherCarrierConfirmButton.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default {
+  color: rgb(51, 71, 138) !important;
+  margin-right: 7px !important;
+  margin-left: 7px !important;
+  font-size: 13px !important;
+  border-color: rgb(51, 71, 138) !important;
+  padding: 4px !important;
+  border-radius: 6px !important;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+#anotherCarrierConfirmButton.ac-container.ac-adaptiveCard> div> div> .ac-actionSet> button.ac-pushButton.style-default> div{
+  padding-bottom: 3px !important;
+  padding-top: 3px !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
+/* Show more buttons*/
+#showMoreButtons.ac-container.ac-adaptiveCard> div.ac-container> div> div> div.ac-actionSet {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: start !important;
+  flex-wrap: wrap !important;
+}
+#showMoreButtons.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-container> div> div> div.ac-actionSet> button.ac-pushButton.style-default.expandable {
+  background-color: none !important;
+  color: rgba(51, 71, 138) !important;
+  border: none !important;
+  text-decoration-line: underline !important;
+  font-size: 10px !important;
+  margin-top: 6px !important;
+}
+
+#showMoreButtons.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-container> div> div> div.ac-actionSet> button.ac-pushButton.style-default.expandable.expanded> div {
+  display: none !important;
+}
+
+#showMoreButtons.ac-container.ac-adaptiveCard> div.ac-container> div> div> div.ac-actionSet> button.ac-pushButton.style-default {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+  margin-right: 6px !important;
+  background-color: #c49e45 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  padding: 8px !important;
+  font-size: 11px !important;
+  cursor: pointer;
+}
+
+#showMoreButtons.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-container> div> div> #button.ac-container.ac-adaptiveCard> div> div>  div.ac-actionSet {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: start !important;
+  flex-wrap: wrap !important;
+}
+
+#showMoreButtons.ac-container.ac-adaptiveCard> div.ac-container> div.ac-container> div.ac-container> div> div> #button.ac-container.ac-adaptiveCard> div> div>  div.ac-actionSet> button.ac-pushButton.style-default {
+  margin-bottom: 3px !important;
+  margin-right: 6px !important;
+  background-color: #c49e45 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  padding: 8px !important;
+  font-size: 11px !important;
+  cursor: pointer;
+}
+

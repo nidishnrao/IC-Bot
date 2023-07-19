@@ -1,0 +1,18 @@
+{
+    "name": "Ask-Integrity",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "name": "http://localhost::3978/api/messages",
+            "id": "1cdd3eb0-2471-11ee-b2e3-5f9fc68e50f1",
+            "appId": "acfd01c5-bf2c-463e-a170-65a749ffcabd",
+            "appPassword": "f5y8Q~piApgv3SdlNFsJk2mvqSVyPMh1hjq1fbG2",
+            "endpoint": "http://localhost::3978/api/messages"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\Projects\\Ask-Integrity.bot",
+    "overrides": null
+}

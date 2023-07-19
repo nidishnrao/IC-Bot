@@ -1,0 +1,23 @@
+{
+    "status": "Terminated",
+    "statusReason": "Appointment Terminated",
+    "starteDate": "2021-11-15T12:30:20.177Z",
+    "endDate": "2024-11-15T12:30:20.177Z",
+    "AWN" : [
+        {
+            "awnNumber": "6783",
+            "isWritable": true,
+            "type": "Agent"
+        },
+        {
+            "awnNumber": "345678",
+            "isWritable": false,
+            "type": "Agent"
+        },
+        {
+            "awnNumber": "34278",
+            "isWritable": false,
+            "type": "Agent"
+        }
+    ]
+}

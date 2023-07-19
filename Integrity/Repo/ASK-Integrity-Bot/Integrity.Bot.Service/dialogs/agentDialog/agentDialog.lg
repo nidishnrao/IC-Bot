@@ -1,0 +1,243 @@
+# AskAgentText
+[Activity
+    Text = Type in the agent name or id to begin
+]
+
+# AskAgentFromOtherFlowsText
+[Activity
+    Text = Ok. What's the agent's name or ID?
+]
+
+# RecentAgentsText
+[Activity
+    Text = You can also select one from your recently contacted agents
+]
+
+# NoRecentAgentsText
+[Activity
+    Text = You do not have any recent agents, try giving agent name or id 
+]
+
+# NoAgentFoundText
+[Activity
+    Text = Sorry, I could not find any agents. Try giving another agent name or id
+]
+
+# RecentInteractionsAgentText
+[Activity
+    Text = I found agents from your recent interactions. Choose one to proceed.
+]
+
+# OthersText
+[Activity
+    Text = If you are looking for agents outside your browse history, choose Others.
+]
+
+# AskStatePrompt
+[Activity
+    Text = Hmm.  I found too many agents to show.  Please enter the agent's state to narrow down the search results a bit.
+]
+
+# InValidStateText
+[Activity
+    Text = You have entered invalid state. You can enter two letter state abbreviation or whole state name.
+]
+
+# AskCityPrompt
+[Activity
+    Text = Unfortunately, still too many agents to show here.  Please enter the agent's city to narrow down the search results a bit.
+]
+
+# NoAgentsFoundInLocationText
+[Activity
+    Text = I could not find any agents with this location. Try again.
+]
+
+# DidNotFindAgentText
+- I couldn't find any agents with the given details.
+> - IF: ${(conversation.agentObj.agentState == '' || conversation.agentObj.agentState == null) && (conversation.agentObj.agentCity == '' || conversation.agentObj.agentCity == null)} 
+> 	-${DidNotFindAgentPre()}.
+> - ELSEIF: ${conversation.flightBooking.agentCity == '' || conversation.flightBooking.agentCity == null}
+> 	-${DidNotFindAgentPre()} and with the location ${conversation.agentObj.agentState}.
+> - ELSEIF: ${conversation.flightBooking.agentState == '' || conversation.flightBooking.agentState == null}
+>     -${DidNotFindAgentPre()} and with the location ${conversation.agentObj.agentCity}.
+> - ELSE:
+> 	-${DidNotFindAgentPre()} and with the location ${conversation.agentObj.agentCity}, ${conversation.agentObj.agentState}.
+	    
+# DidNotFindAgentPre
+- I couldn't find any agents with the name ${conversation.agentObj.agentName}
+
+# DidNotFindAgentPost
+- Please type the valid agent name or id to begin
+
+
+# FoundAgentText
+- Gotcha! 
+- Yay! 
+- Success! 
+
+# FoundAgentPostText
+- I found the agent 123.
+
+# AgentMenuText
+[Activity   
+    Text = Choosing a menu will close the current conversation.
+]
+
+# ChangeAgentText
+[Activity
+    Text = To change agent, type in the agent name or id.
+]
+
+# ChangeAgentTextWithRecent
+[Activity
+    Text = To change agent, type in the agent name or id.\r\nYou can also select one from your recently contacted agents.
+]
+
+# ChangeAgentWarning
+[Activity
+    Text = Changing an agent will close the current conversation.
+]
+
+# SelectedAgentMenuText
+[Activity
+    Text = What information would you like to see for the agent?
+]
+
+# AgentInfoText
+[Activity
+    Text = Bob Bob lives in Norfolk, Madison. He was born in year 1959.He has 2 daughters – Kim and Ashley. He sold 1 ADVANTAGE PLUS, 1 MA and 2 Mod MS Basic Plan policies year to date with total production of $6,000.00.He earned $0.00 in commissions from Premier so far this year.He has 1 30YRTERM/ 10YR GUAR, 1 360 W/BENEFIT RIDER, 1 AARP MAPD / MEDICARE COMPLETE, 1 AARP PART D/PDP and 1 ADVANTAGE PLUS contracts with Premier and 5 MA & 8 PDP contracts with other Integrity companies. Steve has 3 contracts outside of Integrity for carriers BCBS, Kaiser and Devoted.You last connected with Bob on Jan 01 and you sent app packets to him for Humana on Jan 01.
+]
+
+# APIErrorText
+[Activity
+    Text = Back-end systems are not responding. Please try again later.
+]
+
+# AgentMenu
+[Activity
+    Attachments = ${json(AgentMenuCard())}
+]
+
+# AgentMenuCard
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "buttons",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Contract Info",
+            "data": "Contract Info is selected!"
+        },
+		{
+            "type": "Action.Submit",
+            "title": "Commission Info",
+            "data": "Commission Info is selected!"
+        },
+		{
+            "type": "Action.Submit",
+            "title": "Certifications",
+            "data": "Certifications is selected!"
+        },
+		{
+            "type": "Action.Submit",
+            "title": "Application Status",
+            "data": "Application Status is selected!"
+        },
+		{
+            "type": "Action.Submit",
+            "title": "Hierarchy",
+            "data": "Hierarchy is selected!"
+        }
+    ]
+}
+```
+
+# APIPreText
+- Almost there…
+- One moment please…
+- Please wait…
+- Working on it…
+
+# AskAgentNamePrompt
+-  IF: ${(conversation.recentAgentFound)} 
+    - ${(AskAgentNamePromptWithRecentAgent())}
+- ELSEIF:: ${(conversation.askAgain)}
+    - ${(NoAgentFoundText())}
+- ELSEIF:: ${(conversation.askAgentFromOtherFlows)}
+    - ${(AskAgentFromOtherFlowsText())}
+- ELSE:
+    - ${(AskAgentNamePromptWithoutRecentAgent())}
+
+# AskAgentNamePromptWithoutRecentAgent
+[Activity
+    Text = Type in the agent name or id to begin
+]
+
+# AskAgentNamePromptWithRecentAgent
+[Activity
+    Attachments = ${PrepareAgentListCard()}
+    AttachmentLayout = carousel
+]
+
+# PrepareAgentListCard()
+- ${foreach(conversation.cardValues, item, json(AgentListCard(item)))}
+
+#AgentListCard(item)
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "id": "agentInfoCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "${item.agentFirstName}"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${item.agentLastName}"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "none",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${item.agentId}"
+                        },
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${item.city}${item.stateCode}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Select Agent",
+            "data": "Agent ${item.agentId} is selected!"
+        }
+    ]
+}
+```

@@ -1,0 +1,90 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "$data": "${properties}",
+  "id": "hierarchyTable",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "TOH",
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "id": "hierarchy-column-toh",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "[${toh} ${awnTohText}](${tohUrl})",
+              "wrap": true,
+              "id": "hierarchy-text-toh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Immediate Upline",
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "id": "hierarchy-column-iu",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "[${immediateUpline} ${awnImmediateUplineText}](${immediateUplineUrl})",
+              "wrap": true,
+              "id": "hierarchy-text-ip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Downline Count",
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "id": "hierarchy-column-dc",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "[${downlineCount}](${downlineCountUrl}) ",
+              "wrap": true,
+              "id": "hierarchy-text-dc"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

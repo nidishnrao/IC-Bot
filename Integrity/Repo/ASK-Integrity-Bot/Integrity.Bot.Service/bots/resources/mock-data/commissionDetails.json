@@ -1,0 +1,12 @@
+[
+    {
+        "productType": "Dental",
+        "level":"low",
+        "commissionAmount": 360
+    },
+    {
+        "productType": "Extra Packages",
+        "level":"high",
+        "commissionAmount": 360
+    }
+]
